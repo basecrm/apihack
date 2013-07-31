@@ -1,0 +1,11 @@
+development: &defaults
+  adapter: mysql2
+  encoding: utf8
+  database: apihack_dev
+  username: root
+  password:
+  socket: /tmp/mysql.sock
+
+test:
+  <<: *defaults
+  database: apihack_test

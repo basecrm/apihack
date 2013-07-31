@@ -1,0 +1,10 @@
+%a{:href => "/"} Back
+.accordion
+  - @descriptions.each do |description|
+    .accordion-group
+      .accordion-heading
+        %h3
+          %a.accordion-toggle{"data-toggle" => "collapse", :href => "##{description.object_id}"}= description.title
+      .accordion-body.collapse{:id => description.object_id}
+        .accordion-inner
+          %pre= description.lines.join("\n")

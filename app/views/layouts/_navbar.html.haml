@@ -1,0 +1,18 @@
+.navbar
+  .navbar-inner
+    .container
+      %a.brand{:href => "/"} APIHack
+      .nav-collapse
+        %ul.nav
+          %li.logos
+            = image_tag current_user.avatar_url
+            = image_tag "logos/icon-#{current_user.provider}.png"
+          %li.dropdown
+            %a.dropdown-toggle.home{ :href => '#', 'data-toggle' => "dropdown"}
+              Hello,
+              = current_user.username
+              %b.caret
+            %ul.dropdown-menu
+              %li
+                %a{:href => "/logout"} Logout
+          %li.divider-vertical

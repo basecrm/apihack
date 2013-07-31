@@ -1,0 +1,59 @@
+@import "mixins.sass"
+
+.navbar
+  ul
+    li
+      a.home
+        color: #fff
+    li.logos
+      line-height: 40px
+      img
+        vertical-align: middle
+        width: 20px
+        @include rounded(10px)
+        margin-top: -5px
+        line-height: 30px
+
+.login
+  h1
+    text-align: center
+    margin: 20px 0
+  p
+    line-height: 100px
+    text-align: center
+
+    a
+      background-color: #fff
+      padding: 20px
+      @include rounded(10px)
+      display: inline-block
+      border: 1px solid #333
+      height: 100px
+      margin: 20px 20px
+      img
+        vertical-align: middle
+
+.hero-unit
+  h1
+    line-height: 100px
+  .user-name
+    line-height: 100px
+  img
+    vertical-align: middle
+    width: 80
+    @include rounded(40px)
+    box-shadow: 2px 2px 2px #999
+    position: relative
+    top: -5px
+  .score
+    font-size: 3em
+    color: #e67e22
+  .inline
+    display: inline
+  .inline-block
+    display: inline-block
+  .high-score-item
+    img
+      margin-top: -10px
+      margin-left: 10px
+      height: 50px

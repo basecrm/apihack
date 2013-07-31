@@ -1,0 +1,38 @@
+.hero-unit
+  %h1
+    %img{:src => current_user.avatar_url}
+    Welcome to APIHack,
+    %span.user-name= current_user.username
+
+  .row-fluid
+    .span8
+      %a{:href => "/examples"} See specification
+
+      = form_tag "/run_tests", :method => "POST" do
+        %label What framework/language are you hacking in?
+        %input{:type => "text", :name => "framework", :value => current_user.framework}
+        %label Specify your application's address:
+        %input{:type => "text", :name => "app_address", :value => current_user.app_address}
+        %br
+        %button.btn{:type => "submit"} Run tests
+
+      %ul
+        - current_user.recent_test_runs.each do |test_run|
+          %li
+            = link_to(test_run) do
+              %span Test run scheduled at #{test_run.created_at}
+              %strong [#{test_run.status}]
+              - if test_run.score
+                %strong - scored #{test_run.score} points
+    .span4
+      %h3 High scores
+      %ul.unstyled
+        - User.order("score DESC, updated_at ASC").each do |user|
+          %li.high-score-item
+            %span.score= user.score
+            %img.right{:src => user.avatar_url}
+            %span.inline-block
+              %h3.inline
+                = user.username
+              %br
+              %em- (#{user.framework})

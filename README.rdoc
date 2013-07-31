@@ -1,0 +1,19 @@
+== API Hack
+
+An app created to run an app-writing contest
+
+== Setup
+
+Setup your config/database.yml and run as any rails app. You will also need
+to start a delayed_job worker which runs the tests themselves.
+
+== Disclaimer
+
+The test coverage of this app is sorely lacking, sorry :(. If you feel like
+improving that or any other aspect, your input will be very welcome.
+
+== Credits
+
+If you're using the code consider crediting https://github.com/basecrm,
+https://github.com/marcinbunsch (author of https://github.com/futuresimple/hackstrap)
+and https://github.com/obrok

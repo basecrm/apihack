@@ -1,0 +1,44 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+*/
+
+//= require vendors/bootstrap.min
+//= require vendors/bootstrap-responsive.min
+//= require_tree .
+//= require_self
+
+/* Thank you Bootstrap docs */
+.navbar a.brand {
+  padding-right: 0;
+  padding-left: 0;
+  margin-left: 20px;
+  float: right;
+  font-weight: bold;
+  color: black;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .1), 0 0 30px rgba(255, 255, 255, .125);
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+body {
+  background-image: url("/assets/bg-noise.jpg");
+}
+
+.hero-unit {
+  background-color: #FEFEFE;
+  padding: 40px;
+}
+
+.navbar .dropdown-menu::before,
+.navbar .dropdown-menu::after {
+  border: 0;
+}
